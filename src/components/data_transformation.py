@@ -82,9 +82,15 @@ class DataTransformation:
             # discrete_num = ['Seat comfort', 'Departure/Arrival time convenient', 'Food and drink', 'Gate location', 'Inflight wifi service', 'Inflight entertainment', 'Online support', 'Ease of Online booking', 'On-board service', 'Leg room service', 'Baggage handling', 'Checkin service', 'Cleanliness', 'Online boarding']
             
             input_feature_train_df = train_df.drop(columns = [target_column_name], axis = 1)
+            train_df[target_column_name] = train_df[target_column_name].replace('satisfied','1')
+            train_df[target_column_name] = train_df[target_column_name].replace('dissatisfied','0')
+            train_df[target_column_name] = train_df[target_column_name].astype('int64')
             target_feature_train_df = train_df[target_column_name]
             
             input_feature_test_df = test_df.drop(columns = [target_column_name], axis = 1)
+            test_df[target_column_name] = test_df[target_column_name].replace('satisfied','1')
+            test_df[target_column_name] = test_df[target_column_name].replace('dissatisfied','0')
+            test_df[target_column_name] = test_df[target_column_name].astype('int64')
             target_feature_test_df = test_df[target_column_name]
             
             logging.info(f"Applying preprocessing object on training and testing dataframe.")
