@@ -1,4 +1,4 @@
-satisfaction,Gender,Customer Type,Age,Type of Travel,Class,Flight Distance,Seat comfort,Departure/Arrival time convenient,Food and drink,Gate location,Inflight wifi service,Inflight entertainment,Online support,Ease of Online booking,On-board service,Leg room service,Baggage handling,Checkin service,Cleanliness,Online boarding,Departure Delay in Minutes,Arrival Delay in Minutes
+satisfaction,Gender,Customer_Type,Age,Type_of_Travel,Class,Flight_Distance,Seat_comfort,Departure_Arrival_time_convenient,Food_and_drink,Gate_location,Inflight_wifi_service,Inflight_entertainment,Online_support,Ease_of_Online_booking,Onboard_service,Leg_room_service,Baggage_handling,Checkin_service,Cleanliness,Online_boarding,Departure_Delay_in_Minutes,Arrival_Delay_in_Minutes
 satisfied,Female,Loyal Customer,59,Business travel,Business,1470,4,4,4,4,5,4,4,4,4,4,4,5,4,3,7,0.0
 dissatisfied,Female,disloyal Customer,22,Business travel,Eco,1771,1,1,1,4,4,1,5,4,3,4,3,1,4,4,0,0.0
 satisfied,Male,Loyal Customer,55,Business travel,Business,3657,0,5,0,2,4,5,4,4,4,4,4,3,4,3,12,8.0

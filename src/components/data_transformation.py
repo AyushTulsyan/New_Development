@@ -28,10 +28,10 @@ class DataTransformation:
         """
         
         try:
-            discrete_num = ['Seat comfort', 'Departure/Arrival time convenient', 'Food and drink', 'Gate location', 'Inflight wifi service', 'Inflight entertainment', 'Online support', 'Ease of Online booking', 'On-board service', 'Leg room service', 'Baggage handling', 'Checkin service', 'Cleanliness', 'Online boarding']
-            conti_num = ['Age', 'Flight Distance', 'Departure Delay in Minutes', 'Arrival Delay in Minutes']
+            discrete_num = ['Seat_comfort', 'Departure_Arrival_time_convenient', 'Food_and_drink', 'Gate_location', 'Inflight_wifi_service', 'Inflight_entertainment', 'Online_support', 'Ease_of_Online_booking', 'Onboard_service', 'Leg_room_service', 'Baggage_handling', 'Checkin_service', 'Cleanliness', 'Online_boarding']
+            conti_num = ['Age', 'Flight_Distance', 'Departure_Delay_in_Minutes', 'Arrival_Delay_in_Minutes']
             oe = ["Class"]
-            ohe = ['Gender', 'Customer Type', 'Type of Travel']
+            ohe = ['Gender', 'Customer_Type', 'Type_of_Travel']
             
             discrete_num_pipeline = Pipeline([
     ('impute', SimpleImputer(strategy = 'most_frequent')),
@@ -79,7 +79,6 @@ class DataTransformation:
             preprocessing_obj = self.get_data_transformer_object()
             
             target_column_name = "satisfaction"
-            # discrete_num = ['Seat comfort', 'Departure/Arrival time convenient', 'Food and drink', 'Gate location', 'Inflight wifi service', 'Inflight entertainment', 'Online support', 'Ease of Online booking', 'On-board service', 'Leg room service', 'Baggage handling', 'Checkin service', 'Cleanliness', 'Online boarding']
             
             input_feature_train_df = train_df.drop(columns = [target_column_name], axis = 1)
             train_df[target_column_name] = train_df[target_column_name].replace('satisfied','1')
