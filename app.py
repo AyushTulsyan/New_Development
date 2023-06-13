@@ -8,7 +8,7 @@ from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 
 application = Flask(__name__)
 
-app = application
+ = application
 
 @app.route("/")
 def index():
