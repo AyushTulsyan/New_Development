@@ -92,6 +92,16 @@ class DataTransformation:
             test_df[target_column_name] = test_df[target_column_name].astype('int64')
             target_feature_test_df = test_df[target_column_name]
             
+            outlier_col = ['Flight_Distance', 'Departure_Delay_in_Minutes', 'Arrival_Delay_in_Minutes',"Onboard_service", "Checkin_service"]
+            for i in outlier_col:
+                q1, q3 = np.percentile(input_feature_train_df[i],[25,75])
+                iqr = q3 - q1
+                lower = q1 - 1.5*iqr
+                higher = q3 + 1.5*iqr
+                outlier = input_feature_train_df[input_feature_train_df[i]>higher].index.append(input_feature_train_df[input_feature_train_df[i]<lower].index)
+                input_feature_train_df.drop(outlier, axis = 0, inplace = True)
+                target_feature_train_df.drop(outlier, axis = 0, inplace = True)
+            
             logging.info(f"Applying preprocessing object on training and testing dataframe.")
             
             input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
